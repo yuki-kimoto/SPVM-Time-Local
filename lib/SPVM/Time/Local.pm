@@ -12,11 +12,11 @@ SPVM::Time::Local - Time::Local manipulation
   
   use Time::Local;
   
-  # Convert Time::Info object that is local time to epoch
-  my $time = Time::Local->timelocal($time_info);
+  # Convert a Time::Info object that is local time to the epoch time
+  my $epoch = Time::Local->timelocal($time_info_local);
   
-  # Convert Time::Info object that is UTC to epoch
-  my $time = Time::Local->timegm($time_info);
+  # Convert a Time::Info object that is UTC to the epoch time
+  my $epoch = Time::Local->timegm($time_info_utc);
 
 =head1 DESCRIPTION
 
@@ -28,18 +28,18 @@ Time::Local  - Reverse Manipulation of localtime and gmtime functions.
 
   static method timelocal : long ($time_info : Time::Info)
 
-Convert L<Time::Info|SPVM::Time::Info> object that is local time to epoch.
+Convert a L<Time::Info|SPVM::Time::Info> object that is local time to the epoch time.
 
-C<wday> and C<yday> is ignored.
+This method is the same as C<timelocal> function of C<Linux>.
 
-  my $time = Time::Local->timelocal($time_info);
+  my $epoch = Time::Local->timelocal($time_info_local);
 
 =head2 timegm
 
   static method timegm : long ($time_info : Time::Info)
 
-Convert L<Time::Info|SPVM::Time::Info> object that is UTC to epoch.
+Convert a L<Time::Info|SPVM::Time::Info> object that is C<UTC> to the epoch time.
 
-C<wday> and C<yday> is ignored.
+This method is the same as C<timegm> function of C<Linux>.
 
-  my $time = Time::Local->timegm($time_info);
+  my $epoch = Time::Local->timegm($time_info_utc);
