@@ -27,13 +27,16 @@ WriteMakefile(
   },
   # SPVM::Builder::Util::API is needed for Makefile.PL
   CONFIGURE_REQUIRES => {
-    'SPVM'              => '0.9610',
+    'SPVM'              => '0.9608',
   },
 );
 
 sub MY::postamble {
 
   my $make_rule = '';
+  
+  $make_rule .= SPVM::Builder::Util::API::create_make_rule_native('Time::Local');
+  
   
   return $make_rule;
 }

@@ -1,12 +1,9 @@
 class Time::Local {
   use Time::Info;
   use Time;
+  use Fn;
   
-  static method timelocal : long ($time_info : Time::Info) {
-    return Time->timelocal($time_info);
-  }
-  static method timegm : long ($time_info : Time::Info) {
-    return Time->timegm($time_info);
-  }
+  native static method timelocal : long ($time_info : Time::Info);
+  native static method timegm : long ($time_info : Time::Info);
 }
 
