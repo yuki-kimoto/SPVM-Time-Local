@@ -1,11 +1,7 @@
-.github/workflows/linux-32bit.yml
-.github/workflows/linux-perl-5.8.9.yml
 .github/workflows/linux-ubuntu-latest-32bit.yml
 .github/workflows/linux-ubuntu-latest-perl-5.8.9.yml
 .github/workflows/linux-ubuntu-latest.yml
-.github/workflows/linux.yml
 .github/workflows/macos-latest.yml
-.github/workflows/macos.yml
 .github/workflows/windows-2019.yml
 .gitignore
 Changes
