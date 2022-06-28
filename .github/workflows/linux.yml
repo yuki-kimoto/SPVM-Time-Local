@@ -17,7 +17,7 @@ jobs:
         run: perl -V
       - name: perl %Config
         run: perl -MConfig -MData::Dumper -e 'local $Data::Dumper::Sortkeys = 1;warn Dumper \%Config;'
-      - run: ./cpanm -L ~/extlib -n SPVM
+      - run: perl cpanm -L ~/extlib -n SPVM
       - run: find ~/extlib
       - run: echo "PERL5LIB=$HOME/extlib/lib/perl5/"$(perl -MConfig -e 'print $Config{archname}') >> $GITHUB_ENV
       - run: perl -E 'say "@INC"'
