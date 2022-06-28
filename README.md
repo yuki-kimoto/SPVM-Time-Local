@@ -1,4 +1,5 @@
-# SPVM::Time::Local
+# SPVM's Time::Local
 
-SPVM::Time::Local is a SPVM module.
+<code>Time::Local</code> class provides reverse manipulations of <code>localtime</code> and <code>gmtime</code> of <a href="https://metacpan.org/pod/SPVM::Time::Local"> class.
 
+https://metacpan.org/pod/SPVM::Time::Local
