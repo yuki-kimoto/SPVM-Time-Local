@@ -18,7 +18,7 @@ jobs:
       - name: perl %Config
         run: perl -MConfig -MData::Dumper -e 'local $Data::Dumper::Sortkeys = 1;warn Dumper \%Config;'
       - run : mkdir -p ~/perllib
-      - run : ./cpanm -L ~/extlib/lib/perl5 -n SPVM
+      - run : ./cpanm -L ~/extlib -n SPVM
       - run : export PERL5LIB=~/extlib/lib/perl5
       - run: perl Makefile.PL
       - run: make
