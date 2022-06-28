@@ -8,9 +8,6 @@ on:
       - '*'
   pull_request:
 
-env:
-  PERL5LIB: ~/extlib/lib/perl5/x86_64-linux-gnu-thread-multi
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,9 +17,9 @@ jobs:
         run: perl -V
       - name: perl %Config
         run: perl -MConfig -MData::Dumper -e 'local $Data::Dumper::Sortkeys = 1;warn Dumper \%Config;'
-      - run: mkdir -p ~/perllib
       - run: ./cpanm -L ~/extlib -n SPVM
       - run: find ~/extlib
+      - run: echo "PERL5LIB=$HOME/extlib/lib/perl5/"$(perl -MConfig -e 'print $Config{archname}') >> $GITHUB_ENV
       - run: perl -E 'say "@INC"'
       - run: perl Makefile.PL
       - run: make
