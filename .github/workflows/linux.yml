@@ -8,6 +8,9 @@ on:
       - '*'
   pull_request:
 
+env:
+  PERL5LIB: ~/extlib/lib/perl5
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,8 +22,7 @@ jobs:
         run: perl -MConfig -MData::Dumper -e 'local $Data::Dumper::Sortkeys = 1;warn Dumper \%Config;'
       - run: mkdir -p ~/perllib
       - run: ./cpanm -L ~/extlib -n SPVM
-      - run: ls -1 ~/extlib/lib/perl5
-      - run: export PERL5LIB=~/extlib/lib/perl5
+      - run: find ~/extlib
       - run: perl -E 'say "@INC"'
       - run: perl Makefile.PL
       - run: make
