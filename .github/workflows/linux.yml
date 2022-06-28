@@ -17,9 +17,11 @@ jobs:
         run: perl -V
       - name: perl %Config
         run: perl -MConfig -MData::Dumper -e 'local $Data::Dumper::Sortkeys = 1;warn Dumper \%Config;'
-      - run : mkdir -p ~/perllib
-      - run : ./cpanm -L ~/extlib -n SPVM
-      - run : export PERL5LIB=~/extlib/lib/perl5
+      - run: mkdir -p ~/perllib
+      - run: ./cpanm -L ~/extlib -n SPVM
+      - run: ls -1 ~/extlib/lib/perl5
+      - run: export PERL5LIB=~/extlib/lib/perl5
+      - run: perl -E 'say "@INC"'
       - run: perl Makefile.PL
       - run: make
       - run: make disttest
