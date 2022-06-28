@@ -1,4 +1,4 @@
-name: linux-32bit
+name: linux-ubuntu-latest-32bit
 
 on:
   push:
