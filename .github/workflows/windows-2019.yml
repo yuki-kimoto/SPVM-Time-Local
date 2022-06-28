@@ -10,9 +10,7 @@ on:
 
 jobs:
   perl:
-
     runs-on: windows-2019
-
     steps:
       - uses: actions/checkout@master
       - run: perl -V
