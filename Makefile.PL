@@ -4,7 +4,6 @@ use strict;
 use warnings;
 use Config;
 use Getopt::Long 'GetOptions';
-use SPVM::Builder::Util::API;
 
 GetOptions(
   'meta' => \my $meta,
@@ -57,6 +56,7 @@ sub MY::postamble {
   my $make_rule = '';
   
   unless ($no_build_spvm_modules) {
+    require SPVM::Builder::Util::API;
     $make_rule .= SPVM::Builder::Util::API::create_make_rule_native('Time::Local');
   }
   
