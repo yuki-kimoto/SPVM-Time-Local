@@ -3,6 +3,9 @@
     * Don't index cpanm by removing cpanm file.
   [Test Improvement]
     * Updated Github Action workflows
+  [Document Improvement]
+    * Removed CAUTION section.
+    * Improved document styles.
 0.06 2022-06-28
   * Update documents
 0.05 2022-06-23
