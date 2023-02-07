@@ -3,7 +3,21 @@ use ExtUtils::MakeMaker;
 use strict;
 use warnings;
 use Config;
+use Getopt::Long 'GetOptions';
 use SPVM::Builder::Util::API;
+
+GetOptions(
+  'meta' => \my $meta,
+  'no-build-spvm-modules' => \my $no_build_spvm_modules,
+);
+
+if ($meta) {
+  $no_build_spvm_modules = 1;
+}
+
+unless ($meta) {
+  # Do something such as environment check.
+}
 
 my %configure_and_runtime_requires = ('SPVM' => '0.9689');
 WriteMakefile(
@@ -42,7 +56,9 @@ sub MY::postamble {
 
   my $make_rule = '';
   
-  $make_rule .= SPVM::Builder::Util::API::create_make_rule_native('Time::Local');
+  unless ($no_build_spvm_modules) {
+    $make_rule .= SPVM::Builder::Util::API::create_make_rule_native('Time::Local');
+  }
   
   return $make_rule;
 }
