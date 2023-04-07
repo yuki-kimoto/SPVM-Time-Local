@@ -1,4 +1,6 @@
 0.10 2023-04-07
+  [Incompatible Changes]
+    * Use Sys::Time::Tm instead of Time::Info in all places.
   [License Change]
     * The license is changed to MIT License.
 0.09 2023-03-19
