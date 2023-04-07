@@ -1,4 +1,6 @@
 0.10 2023-04-07
+  [Prerequirement Changes]
+    * SPVM::Sys 0.48 is required.
   [Incompatible Changes]
     * Use Sys::Time::Tm instead of Time::Info in all places.
   [License Change]
