@@ -2,6 +2,8 @@
 # MIT License
 
 class Time::Local {
+  version "0.110";
+  
   use Sys::Time::Tm;
   
   native static method timelocal : long ($time_info : Sys::Time::Tm);
