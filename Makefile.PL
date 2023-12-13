@@ -42,10 +42,10 @@ WriteMakefile(
   NORECURS => 1,
   CONFIGURE_REQUIRES => {
     %configure_and_runtime_requires,
-    'SPVM::Sys' => '0.512',
   },
   PREREQ_PM         => {
     %configure_and_runtime_requires,
+    'SPVM::Sys' => '0.512',
   },
   TEST_REQUIRES => {
     
