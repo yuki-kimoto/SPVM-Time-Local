@@ -5,16 +5,16 @@ class TestCase::Time::Local {
   
   static method timelocal : int () {
     {
-      my $time = Sys::Time->time();
+      my $epoch = Sys::Time->time();
       
-      my $tm = Sys->localtime($time);
+      my $tm = Sys->localtime($epoch);
       
-      my $time_ret = Time::Local->timelocal($tm);
+      my $epoch_ret = Time::Local->timelocal($tm);
       
-      unless ($time_ret isa long) {
+      unless ($epoch_ret isa long) {
         return 0;
       }
-      unless ($time == $time_ret) {
+      unless ($epoch == $epoch_ret) {
         return 0;
       }
     }
@@ -24,16 +24,16 @@ class TestCase::Time::Local {
 
   static method timegm : int () {
     {
-      my $time = Sys::Time->time();
+      my $epoch = Sys::Time->time();
       
-      my $tm = Sys->gmtime($time);
+      my $tm = Sys->gmtime($epoch);
       
-      my $time_ret = Time::Local->timegm($tm);
+      my $epoch_ret = Time::Local->timegm($tm);
 
-      unless ($time_ret isa long) {
+      unless ($epoch_ret isa long) {
         return 0;
       }
-      unless ($time == $time_ret) {
+      unless ($epoch == $epoch_ret) {
         return 0;
       }
     }
