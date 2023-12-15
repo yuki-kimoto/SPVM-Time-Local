@@ -3,34 +3,6 @@ class TestCase::Time::Local {
   use Sys::Time::Tm;
   use Time::Local;
   
-  static method time_info : int () {
-    my $time_info = Sys::Time::Tm->new;
-    
-    unless ($time_info isa Sys::Time::Tm) {
-      return 0;
-    }
-    
-    return 1;
-  }
-  
-  static method time : long () {
-    my $time = Sys::Time->time;
-    
-    return $time;
-  }
-
-  static method localtime : Sys::Time::Tm ($time : long) {
-    my $time_info = Sys->localtime($time);
-    
-    return $time_info;
-  }
-
-  static method gmtime : Sys::Time::Tm ($time : long) {
-    my $time_info = Sys->gmtime($time);
-    
-    return $time_info;
-  }
-
   static method timelocal : int () {
     {
       my $time = Sys::Time->time();
