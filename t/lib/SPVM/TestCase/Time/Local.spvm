@@ -7,9 +7,9 @@ class TestCase::Time::Local {
     {
       my $time = Sys::Time->time();
       
-      my $time_info = Sys->localtime($time);
+      my $tm = Sys->localtime($time);
       
-      my $time_ret = Time::Local->timelocal($time_info);
+      my $time_ret = Time::Local->timelocal($tm);
       
       unless ($time_ret isa long) {
         return 0;
@@ -26,9 +26,9 @@ class TestCase::Time::Local {
     {
       my $time = Sys::Time->time();
       
-      my $time_info = Sys->gmtime($time);
+      my $tm = Sys->gmtime($time);
       
-      my $time_ret = Time::Local->timegm($time_info);
+      my $time_ret = Time::Local->timegm($tm);
 
       unless ($time_ret isa long) {
         return 0;
