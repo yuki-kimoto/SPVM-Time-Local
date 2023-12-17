@@ -1,6 +1,6 @@
 package SPVM::Time::Local;
 
-our $VERSION = '0.110';
+our $VERSION = '0.111';
 
 1;
 
