@@ -56,13 +56,14 @@ class TestCase::Time::Local {
       
       warn "[Test Output]timegm:to local:$epoch $epoch_again";
       
-      unless ($epoch_again > 0) {
+      my $epoch_diff = $epoch - $epoch_again;
+      
+      my $epoch_diff_hour = $epoch_diff / 60 / 60;
+      
+      unless ($epoch_diff_hour == 9) {
         return 0;
       }
       
-      if ($epoch == $epoch_again) {
-        return 0;
-      }
     }
     
     return 1;
