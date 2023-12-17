@@ -1,3 +1,10 @@
+0.111 2023-12-13
+  [Internal Changes]
+    * Remove unused methods.
+  [Document Improvement]
+    * Improve the doc.
+  [Test Improvement]
+    * Add lolale tests.
 0.110 2023-12-13
   [Prerequirement Changes]
     * Require SPVM::Sys 0.512.
