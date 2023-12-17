@@ -16,6 +16,10 @@ jobs:
       - uses: shogo82148/actions-setup-perl@v1
         with:
           perl-version: '5.8.9'
+      - name: Set TZ
+        run: echo "TZ=Asia/Tokyo" >> $GITHUB_ENV
+      - name: Show TZ
+        run: echo $TZ
       - name: Perl version
         run: perl -V
       - name: Perl config
