@@ -6,6 +6,7 @@ class Time::Local {
   
   use Sys::Time::Tm;
   
+  # Class Methods
   native static method timelocal : long ($tm : Sys::Time::Tm);
   
   native static method timegm : long ($tm : Sys::Time::Tm);
