@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Set timezone
+        run: timedatectl set-timezone Asia/Tokyo
       - name: Perl version
         run: perl -V
       - name: Perl config
